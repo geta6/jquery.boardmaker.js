@@ -1,25 +1,28 @@
 {
-  "name": "",
-  "version": "0.0.0",
-  "private": true,
-  "description": "",
-  "bin": "",
-  "main": "lib/index.js",
+  "name": "jquery.boardmaker",
+  "version": "0.0.6",
+  "private": false,
+  "description": "jQuery plugin for slide",
+  "main": "lib/jquery.boardmaker.js",
   "scripts": {
     "test": "grunt test"
   },
-  "author": "",
+  "author": "geta6",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "coffee-errors": "*",
     "coffee-script": "*",
+    "coffee-errors": "*",
     "mocha": "*",
     "grunt": "*",
     "grunt-simple-mocha": "*",
     "grunt-notify": "*",
     "grunt-contrib-coffee": "*",
-    "grunt-coffeelint": "git+https://github.com/geta6/grunt-coffeelint",
-    "grunt-contrib-watch": "git+https://github.com/gruntjs/grunt-contrib-watch"
+    "grunt-coffee-lint": "*",
+    "grunt-contrib-watch": "*",
+    "jquery": "*",
+    "chai": "*",
+    "jsdom": "*",
+    "grunt-contrib-uglify": "~0.2.7"
   }
 }

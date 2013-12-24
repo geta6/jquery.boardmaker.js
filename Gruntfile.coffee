@@ -6,16 +6,17 @@ module.exports = (grunt) ->
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks 'grunt-coffeelint'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
+  grunt.loadNpmTasks 'grunt-coffee-lint'
   grunt.loadNpmTasks 'grunt-simple-mocha'
   grunt.loadNpmTasks 'grunt-notify'
 
-  grunt.registerTask 'test',    [ 'coffeelint', 'coffee', 'simplemocha' ]
+  grunt.registerTask 'test',    [ 'coffee_lint', 'coffee', 'uglify' ]
   grunt.registerTask 'default', [ 'test', 'watch' ]
 
   grunt.initConfig
 
-    coffeelint:
+    coffee_lint:
       options:
         max_line_length:
           value: 79
@@ -27,21 +28,25 @@ module.exports = (grunt) ->
           level: 'error'
         no_unnecessary_fat_arrows:
           level: 'ignore'
+        globals: [
+          'window', 'document', 'jQuery', 'console'
+        ]
       dist:
         files: [
           { expand: yes, cwd: 'src/', src: [ '**/*.coffee' ] }
-          { expand: yes, cwd: 'tests/', src: [ '**/*.coffee' ] }
         ]
 
     coffee:
       dist:
-        files: [{
-          expand: yes
-          cwd: 'src/'
-          src: [ '**/*.coffee' ]
-          dest: 'lib/'
-          ext: '.js'
-        }]
+        files: [
+          'lib/jquery.boardmaker.js': [ 'src/jquery.boardmaker.coffee' ]
+        ]
+
+    uglify:
+      dist:
+        files: [
+          'lib/jquery.boardmaker.min.js': [ 'lib/jquery.boardmaker.js' ]
+        ]
 
     simplemocha:
       options:
