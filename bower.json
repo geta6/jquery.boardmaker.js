@@ -1,0 +1,17 @@
+{
+  "name": "jquery.boardmaker.js",
+  "version": "0.0.6",
+  "homepage": "https://github.com/geta6/jquery.boardmaker.js",
+  "authors": [
+    "geta6 <getakura@gmail.com>"
+  ],
+  "main": "lib/jquery.boardmaker.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
