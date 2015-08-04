@@ -305,8 +305,8 @@ jquery.boardmaker
         bindCssSupport()
         diff = touches.pageX - @data 'bm:touchstartx'
         if currentWidth * -0.3 > diff
-          return @trigger 'bm:next' if $page - 1 < @data 'bm:current'
-          return @trigger 'bm:last'
+          return @trigger 'bm:last' if $page - 1 < @data 'bm:current'
+          return @trigger 'bm:next'
         if currentWidth *  0.3 < diff
           return @trigger 'bm:prev' if 0 < @data 'bm:current'
           return @trigger 'bm:first'
