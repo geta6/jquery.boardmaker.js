@@ -1,6 +1,6 @@
 {
   "name": "jquery.boardmaker",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "description": "jQuery plugin for slide",
   "main": "lib/jquery.boardmaker.js",
